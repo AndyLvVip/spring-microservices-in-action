@@ -6,6 +6,7 @@
     <modules>
         <module>config-server</module>
         <module>licensing</module>
+        <module>eureka-server</module>
     </modules>
     <groupId>aspire.demo</groupId>
 	<artifactId>spring-microservices-in-action</artifactId>

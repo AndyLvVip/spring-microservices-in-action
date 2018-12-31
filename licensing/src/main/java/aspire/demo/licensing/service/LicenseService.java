@@ -6,6 +6,7 @@ import aspire.demo.licensing.repository.LicenseRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.UUID;
 
 @Service
 public class LicenseService {
@@ -22,6 +23,7 @@ public class LicenseService {
 
     public License getLicense(String licenseId) {
         License license = licenseRepository.findByLicenseId(licenseId);
+        license.setProductName(serviceConfig.getExampleProperty());
         return license;
     }
 
@@ -30,6 +32,7 @@ public class LicenseService {
     }
 
     public void save(License license) {
+        license.setLicenseId(UUID.randomUUID().toString());
         licenseRepository.save(license);
     }
 

@@ -1,14 +1,16 @@
-package aspire.demo.licensing;
+package aspire.demo.eurekaserver;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
+import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 
 @SpringBootApplication
 @RefreshScope
-public class LicensingApplication {
+@EnableEurekaServer
+public class EurekaServerApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(LicensingApplication.class, args);
+        SpringApplication.run(EurekaServerApplication.class, args);
     }
 }
