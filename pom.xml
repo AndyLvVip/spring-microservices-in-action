@@ -5,6 +5,7 @@
 	<packaging>pom</packaging>
     <modules>
         <module>config-server</module>
+        <module>licensing</module>
     </modules>
     <groupId>aspire.demo</groupId>
 	<artifactId>spring-microservices-in-action</artifactId>
