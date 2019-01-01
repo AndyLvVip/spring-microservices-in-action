@@ -1,16 +1,18 @@
-package aspire.demo.licensing;
+package aspire.demo.zuulserver;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
+import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 
 @SpringBootApplication
+@EnableZuulProxy
 @RefreshScope
 @EnableDiscoveryClient
-public class LicensingApplication {
+public class ZuulServerApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(LicensingApplication.class, args);
+        SpringApplication.run(ZuulServerApplication.class, args);
     }
 }
