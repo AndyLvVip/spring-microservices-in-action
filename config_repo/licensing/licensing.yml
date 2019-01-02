@@ -1,6 +1,3 @@
-logging:
-  level:
-    root: debug
 example:
   property: I am the default profile
 spring:
@@ -12,7 +9,7 @@ spring:
     database: mysql
     show-sql: true
     hibernate:
-      ddl-auto: create
+      ddl-auto: none
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL8Dialect
