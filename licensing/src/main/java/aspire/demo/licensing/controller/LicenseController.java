@@ -2,9 +2,7 @@ package aspire.demo.licensing.controller;
 
 import aspire.demo.licensing.domain.License;
 import aspire.demo.licensing.service.LicenseService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class LicenseController {
@@ -15,9 +13,24 @@ public class LicenseController {
         this.licenseService = licenseService;
     }
 
-    @GetMapping("/license/{licenseId}")
+    @GetMapping("/licenses/{licenseId}")
     public License getLicense(@PathVariable("licenseId") String licenseId) {
         return licenseService.getLicense(licenseId);
+    }
+
+    @PostMapping("/licenses")
+    public void create(@RequestBody License license) {
+        licenseService.create(license);
+    }
+
+    @PutMapping("/licenses/{licenseId}")
+    public void edit(@PathVariable("licenseId") String licenseId, @RequestBody License license) {
+        licenseService.edit(license);
+    }
+
+    @DeleteMapping("/license/{licenseId}")
+    public void delete(@PathVariable("licenseId") String licenseId, @RequestBody License license) {
+        licenseService.delete(license);
     }
 
 }

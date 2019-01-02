@@ -1,6 +1,7 @@
 package aspire.demo.licensing.service;
 
 import aspire.demo.licensing.ServiceConfig;
+import aspire.demo.licensing.clients.OrganizationRestTemplateClient;
 import aspire.demo.licensing.domain.License;
 import aspire.demo.licensing.repository.LicenseRepository;
 import org.springframework.stereotype.Service;
@@ -11,19 +12,24 @@ import java.util.UUID;
 @Service
 public class LicenseService {
 
-    private LicenseRepository licenseRepository;
+    private final LicenseRepository licenseRepository;
 
-    private ServiceConfig serviceConfig;
+    private final ServiceConfig serviceConfig;
+
+    private final OrganizationRestTemplateClient organizationRestTemplateClient;
 
     public LicenseService(LicenseRepository licenseRepository,
-                          ServiceConfig serviceConfig) {
+                          ServiceConfig serviceConfig,
+                          OrganizationRestTemplateClient organizationRestTemplateClient) {
         this.licenseRepository = licenseRepository;
         this.serviceConfig = serviceConfig;
+        this.organizationRestTemplateClient = organizationRestTemplateClient;
     }
 
     public License getLicense(String licenseId) {
         License license = licenseRepository.findByLicenseId(licenseId);
-        license.setProductName(serviceConfig.getExampleProperty());
+        license.setOrganization(organizationRestTemplateClient.getOrganization(license.getOrganizationId()));
+        license.setComment(serviceConfig.getExampleProperty());
         return license;
     }
 
@@ -31,9 +37,17 @@ public class LicenseService {
         return licenseRepository.findByOrganizationId(organizationId);
     }
 
-    public void save(License license) {
+    public void create(License license) {
         license.setLicenseId(UUID.randomUUID().toString());
         licenseRepository.save(license);
+    }
+
+    public void edit(License license) {
+        licenseRepository.save(license);
+    }
+
+    public void delete(License license) {
+        licenseRepository.delete(license);
     }
 
 }

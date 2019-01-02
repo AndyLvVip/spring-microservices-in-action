@@ -8,7 +8,8 @@
         <module>licensing</module>
         <module>eureka-server</module>
 		<module>zuul-server</module>
-	</modules>
+        <module>organization</module>
+    </modules>
     <groupId>aspire.demo</groupId>
 	<artifactId>spring-microservices-in-action</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
