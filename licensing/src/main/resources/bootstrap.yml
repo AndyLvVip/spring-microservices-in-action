@@ -1,6 +1,6 @@
 spring:
   application:
-    name: licensing
+    name: licensingservice
   profiles:
     active: default
   cloud:

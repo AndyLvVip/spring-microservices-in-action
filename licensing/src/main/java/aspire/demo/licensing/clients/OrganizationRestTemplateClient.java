@@ -17,7 +17,7 @@ public class OrganizationRestTemplateClient {
     @HystrixCommand(threadPoolKey = "get-organization-by-id")
     public Organization getOrganization(String organizationId) {
         return restTemplate.exchange(
-                "http://ORGANIZATION/organizations/{organizationId}",
+                "http://ORGANIZATIONSERVICE/organizations/{organizationId}",
                 HttpMethod.GET,
                 null,
                 Organization.class,
