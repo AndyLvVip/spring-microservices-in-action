@@ -13,3 +13,13 @@ management:
     web:
       exposure:
         include: "*"
+hystrix:
+  command:
+    licensingservice:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 7000
+licensingservice:
+  ribbon:
+    ReadTimeout: 7000
