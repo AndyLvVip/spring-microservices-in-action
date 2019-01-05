@@ -9,6 +9,7 @@
         <module>eureka-server</module>
 		<module>zuul-server</module>
         <module>organization</module>
+        <module>auth-service</module>
     </modules>
     <groupId>aspire.demo</groupId>
 	<artifactId>spring-microservices-in-action</artifactId>

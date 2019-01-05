@@ -26,3 +26,7 @@ spring:
       dbcp2:
         validation-query: select 1
         test-while-idle: true
+security:
+  oauth2:
+    resource:
+      user-info-uri: http://localhost:5555/authservice/user

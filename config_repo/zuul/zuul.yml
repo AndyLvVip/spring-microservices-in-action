@@ -19,7 +19,9 @@ hystrix:
       execution:
         isolation:
           thread:
-            timeoutInMilliseconds: 7000
+            timeoutInMilliseconds: 10000
 licensingservice:
   ribbon:
-    ReadTimeout: 7000
+    ReadTimeout: 10000
+zuul:
+  sensitive-headers: Cookie,Set-Cookie
