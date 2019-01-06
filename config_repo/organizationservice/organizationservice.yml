@@ -26,6 +26,11 @@ spring:
       dbcp2:
         validation-query: select 1
         test-while-idle: true
+  zipkin:
+    base-url: http://localhost:5555/zipkinservice
+  sleuth:
+    sampler:
+      probability: 1.0
 security:
   oauth2:
     resource:

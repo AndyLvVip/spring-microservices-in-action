@@ -7,4 +7,4 @@ spring:
     config:
       server:
         native:
-          search-locations: file:./config_repo/eureka,file:./config_repo/zuul,file:./config_repo/licensingservice,file:./config_repo/organizationservice,file:./config_repo/authservice
+          search-locations: file:./config_repo/eureka,file:./config_repo/zuul,file:./config_repo/licensingservice,file:./config_repo/organizationservice,file:./config_repo/authservice,file:./config_repo/zipkinservice

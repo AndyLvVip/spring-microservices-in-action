@@ -10,6 +10,7 @@
 		<module>zuul-server</module>
         <module>organization</module>
         <module>auth-service</module>
+        <module>zipkin-service</module>
     </modules>
     <groupId>aspire.demo</groupId>
 	<artifactId>spring-microservices-in-action</artifactId>
