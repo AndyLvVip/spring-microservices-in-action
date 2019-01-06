@@ -2,6 +2,7 @@ package aspire.demo.licensing.controller;
 
 import aspire.demo.licensing.domain.License;
 import aspire.demo.licensing.service.LicenseService;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -14,6 +15,7 @@ public class LicenseController {
     }
 
     @GetMapping("/licenses/{licenseId}")
+    @PreAuthorize("@financeMenu.canDelete(authentication)")
     public License getLicense(@PathVariable("licenseId") String licenseId) {
         return licenseService.getLicense(licenseId);
     }
